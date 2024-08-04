@@ -33,13 +33,18 @@ class LocalNotificationService {
   //basic Notification
   static void showBasicNotification() async {
     AndroidNotificationDetails android = AndroidNotificationDetails(
-        'id 1', 'basic notification',
-        importance: Importance.max,
-        priority: Priority.high,
-        sound:
-            RawResourceAndroidNotificationSound('sound.wav'.split('.').first));
+      'id 1',
+      'basic notification',
+      importance: Importance.max,
+      priority: Priority.high,
+      sound: RawResourceAndroidNotificationSound('sound.wav'.split('.').first),
+    );
     NotificationDetails details = NotificationDetails(
       android: android,
+      iOS: const DarwinNotificationDetails(
+        presentSound: true,
+        sound: 'res_0000_0.caf',
+      ),
     );
     await flutterLocalNotificationsPlugin.show(
       0,
@@ -200,4 +205,3 @@ class LocalNotificationService {
 //6.on Tab. [Done]
 //7.Daily Notifications at specific time. [Done]
 //8.Real Example in To Do App.
-

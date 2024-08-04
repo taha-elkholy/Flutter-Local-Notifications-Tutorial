@@ -3,16 +3,13 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notification/local_notification_service.dart';
 import 'package:flutter_local_notification/notification_details.dart';
-import 'package:flutter_local_notification/work_manager_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Future.wait([
     LocalNotificationService.init(),
-    WorkManagerService().init(),
+    // WorkManagerService().init(),
   ]);
-  // await LocalNotificationService.init(); //2
-  // await WorkManagerService().init(); //4
   runApp(const MyApp());
 }
 
@@ -145,5 +142,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
-
