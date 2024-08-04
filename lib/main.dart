@@ -111,13 +111,13 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-          //Schduled
+          //Scheduled
           ListTile(
             onTap: () {
-              LocalNotificationService.showSchduledNotification();
+              LocalNotificationService.showScheduledNotification();
             },
             leading: const Icon(Icons.notifications),
-            title: const Text('Schduled Notification'),
+            title: const Text('Scheduled Notification'),
             subtitle: const Text('after 10 seconds from now'),
             trailing: IconButton(
               onPressed: () {

@@ -30,7 +30,7 @@ class WorkManagerService {
 void actionTask() {
   //show notification
   Workmanager().executeTask((taskName, inputData) {
-    LocalNotificationService.showDailySchduledNotification();
+    LocalNotificationService.showDailyScheduledNotification();
     return Future.value(true);
   });
 }

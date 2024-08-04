@@ -43,7 +43,7 @@ class LocalNotificationService {
       android: android,
       iOS: const DarwinNotificationDetails(
         presentSound: true,
-        sound: 'res_0000_0.caf',
+        sound: 'assets/sound.wav',
       ),
     );
     await flutterLocalNotificationsPlugin.show(
@@ -96,10 +96,10 @@ class LocalNotificationService {
     );
   }
 
-  //showSchduledNotification
-  static void showSchduledNotification() async {
+  //showScheduledNotification
+  static void showScheduledNotification() async {
     const AndroidNotificationDetails android = AndroidNotificationDetails(
-      'schduled notification',
+      'scheduled notification',
       'id 3',
       importance: Importance.max,
       priority: Priority.high,
@@ -117,7 +117,7 @@ class LocalNotificationService {
     log("After ${tz.TZDateTime.now(tz.local).hour}");
     await flutterLocalNotificationsPlugin.zonedSchedule(
       2,
-      'Schduled Notification',
+      'Scheduled Notification',
       'body',
       tz.TZDateTime.now(tz.local).add(const Duration(seconds: 10)),
       // tz.TZDateTime(
@@ -135,10 +135,10 @@ class LocalNotificationService {
     );
   }
 
-  //showDailySchduledNotification
-  static void showDailySchduledNotification() async {
+  //showDailyScheduledNotification
+  static void showDailyScheduledNotification() async {
     const AndroidNotificationDetails android = AndroidNotificationDetails(
-      'daily schduled notification',
+      'daily scheduled notification',
       'id 4',
       importance: Importance.max,
       priority: Priority.high,
@@ -181,7 +181,7 @@ class LocalNotificationService {
     }
     await flutterLocalNotificationsPlugin.zonedSchedule(
       3,
-      'Daily Schduled Notification',
+      'Daily Scheduled Notification',
       'body',
       // tz.TZDateTime.now(tz.local).add(const Duration(seconds: 10)),
       scheduleTime,
