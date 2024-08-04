@@ -12,8 +12,6 @@ class LocalNotificationService {
   static StreamController<NotificationResponse> streamController =
       StreamController();
   static onTap(NotificationResponse notificationResponse) {
-    // log(notificationResponse.id!.toString());
-    // log(notificationResponse.payload!.toString());
     streamController.add(notificationResponse);
     // Navigator.push(context, route);
   }
@@ -43,7 +41,7 @@ class LocalNotificationService {
       android: android,
       iOS: const DarwinNotificationDetails(
         presentSound: true,
-        sound: 'assets/sound.wav',
+        sound: 'sound.wav',
       ),
     );
     await flutterLocalNotificationsPlugin.show(
@@ -171,12 +169,12 @@ class LocalNotificationService {
     log("scheduledTime.second:${scheduleTime.second}");
     if (scheduleTime.isBefore(currentTime)) {
       scheduleTime = scheduleTime.add(const Duration(hours: 1));
-      log("AfterAddedscheduledTime.year:${scheduleTime.year}");
-      log("AfterAddedscheduledTime.month:${scheduleTime.month}");
-      log("AfterAddedscheduledTime.day:${scheduleTime.day}");
-      log("AfterAddedscheduledTime.hour:${scheduleTime.hour}");
-      log("AfterAddedscheduledTime.minute:${scheduleTime.minute}");
-      log("AfterAddedscheduledTime.second:${scheduleTime.second}");
+      log("AfterAddedScheduledTime.year:${scheduleTime.year}");
+      log("AfterAddedScheduledTime.month:${scheduleTime.month}");
+      log("AfterAddedScheduledTime.day:${scheduleTime.day}");
+      log("AfterAddedScheduledTime.hour:${scheduleTime.hour}");
+      log("AfterAddedScheduledTime.minute:${scheduleTime.minute}");
+      log("AfterAddedScheduledTime.second:${scheduleTime.second}");
       log('Added Duration to scheduled time');
     }
     await flutterLocalNotificationsPlugin.zonedSchedule(
